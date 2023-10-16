@@ -1,5 +1,15 @@
 {
-    "rewrites": [
-      { "source": "/(.*)", "destination": "/api/app1" }
+    "builds": [
+        {
+            "src": "api/app1.py",
+            "use": "@vercel/python",
+            "commands": ["pip install -r requirements.txt", "pip install nltk", "pip install re", "pip install joblib"]
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "api/app1.py"
+        }
     ]
-  }
+}
