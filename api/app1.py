@@ -1,13 +1,13 @@
 import re
+import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
 import string
-import nltk
 from sklearn.feature_extraction.text import CountVectorizer
 import pandas as pd
 import joblib
-import nltk
+# import nltk
 nltk.download('stopwords')
 nltk.download('punkt')
 #---------------------------importing data and training the ocuntvectorizer----------------------------------------------
