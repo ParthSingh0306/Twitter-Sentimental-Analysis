@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sentiment Analysis Tool</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Pricing</a>
+      <a href="#features">Features</a>
+      <a href="#">Blog</a>
+      <a href="login.html" class="login" id="loginButton">Login</a>
+      <!-- <a href="logout.html" class="logout" style="display: none;">Logout</a> Initially hidden -->
+    </nav>
+  </header>
+  
+  <main>
+    <div class="container-text">
+      TWEETER
+    </div>
+
+
+    <h1>Sentiment Analysis Tool</h1>
+    <div class="hero_section">
+      <form action="/predict" method="post">
+        <input type="text" name="tname">
+        <button type="submit" >Analyze</button>
+      </form>
+      <div id="results">
+        {% if pred == "Positive" %}
+          <p id="show_emoji">😀</p>
+          {{pred}}
+        {% else %}
+          <p id="show_emoji">😑</p>
+          {{pred}}
+        {% endif %}
+      </div>
+    </div>
+
+
+    <section id="features">
+      <h2>Sentiment Analysis Benefits</h2>
+      <ul>
+        <li>Quickly detect negative comments & respond instantly</li>
+        <li>Improve response times to urgent queries by 65%</li>
+        <li>Take on 20% higher data volume</li>
+        <li>Monitor sentiment about your brand, product, or service in real time</li>
+      </ul>
+    </section>
+    
+    <div class="containerDetails">
+      <fieldset class="inputs">
+        <textarea type="text" name="post" id="text-box" placeholder="Your Notes..."></textarea>
+      </fieldset>
+      <fieldset class="actions">
+        <button id="submit">Post</button>
+      </fieldset>
+      <div id="post-container"></div>
+    </div>
+  </main>
+  
+  <footer>
+    <p>Copyright &copy; 2023 Sentiment Analysis Tool</p>
+  </footer>
+  
+  <!-- <script src="script.js"></script> -->
+</body>
+</html>
+
+
